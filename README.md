@@ -32,8 +32,8 @@ link to the live site [BenefitsHub Nigeria](https://benefitshub.juliusdgenius.te
 
 1. Clone the repository:
    ```
-   git clone https://github.com/JuliusDgenius/alx-portfolio_project.git
-   cd alx-portfolio_project
+   git clone https://github.com/JuliusDgenius/benefitshub.git
+   cd benefitshub
    ```
 
 2. Create a virtual environment and activate it:
@@ -98,7 +98,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 [Julius Ibe](https://twitter.com/@0xjulius_) - ibejulius1@gmail.com
 [LinkedIn](https://www.linkedin.com/in/julius-ibe/)
 
-Project Link: [https://github.com/JuliusDgenius/alx-portfolio/]
+Project Link: [https://github.com/JuliusDgenius/benefitshub/]
 
 ## Acknowledgements
 
