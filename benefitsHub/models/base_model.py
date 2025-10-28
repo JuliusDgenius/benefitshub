@@ -38,15 +38,16 @@ class User(db.Model, UserMixin):
 
     def get_reset_token(self, expires=1800):
         """Get a reset token for the user"""
-        s = Serializer(current_app.config['SECRET_KEY'], expires)
-        return s.dumps({"user_id": self.id}).decode('utf-8')
+        s = Serializer(current_app.config['SECRET_KEY'])
+        return s.dumps({"user_id": self.id})
 
     @staticmethod
     def verify_reset_token(token):
         """Verify a reset token for the user"""
         s = Serializer(current_app.config['SECRET_KEY'])
         try:    
-            user_id = s.loads(token)['user_id']
+            data = s.loads(token, max_age=expires_sec)
+            user_id = data.get('user_id')
         except Exception as e:
             print(e)
             return None
