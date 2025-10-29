@@ -16,7 +16,7 @@ class Config:
     SECRET_KEY = config.get('SECRET_KEY') or os.getenv('SECRET_KEY', 'dev_secret_key')
     
     # Database URI for SQLAlchemy
-    SQLALCHEMY_DATABASE_URI = config.get('SQLALCHEMY_DATABASE_URI') or os.getenv('DATABASE_URL')
+    SQLALCHEMY_DATABASE_URI = config.get('SQLALCHEMY_DATABASE_URI') or os.getenv('SQLALCHEMY_DATABASE_URI')
     
     # Email configuration
     # SMTP server settings for Gmail
