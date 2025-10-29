@@ -50,5 +50,15 @@ def create_app(app_config=Config):
     app.register_blueprint(benefits)
     app.register_blueprint(main)
     app.register_blueprint(errors)
+ 
+    # Automatically create tables if not present, to allow me deploy on Render free tier
+    # Will remove block when I upgrade
+    from benefitsHub import models
+    with app.app_context():
+        try:
+            db.create_all()
+            print("Database tables verified/created successfully.")
+        except OperationalError as e:
+            print(f"Database connection or creation error: {e}")
 
     return app
